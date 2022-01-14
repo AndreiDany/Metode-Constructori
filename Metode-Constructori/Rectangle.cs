@@ -8,33 +8,34 @@ namespace Metode_Constructori
 {
     public class Rectangle
     {
-        public Point A { get; set; }
-        public Point B { get; set; }
-        public Point C { get; set; }
-        public Point D { get; set; }
-        public int Lungime { get; set; }
-        public int Latime { get; set; }
+        public Point A { get; set; } = new Point(0, 0);
+        public Point B { get; set; } = new Point(0,0);
+
+        public Point C { get; set; } = new Point(0, 0);
+        public Point D { get; set; } = new Point(0, 0);
+        public int Lungime { get; set; } = 0;
+        public int Latime { get; set; } = 0;
 
         public Rectangle(Point A, int Lungime, int Latime)
             {
             this.A = A;
             this.Lungime = Lungime;
             this.Latime = Latime;
-            this.B.X = this.A.X + Latime;
-            this.B.Y = this.A.Y;
-            this.C.X = this.A.X + Latime;
-            this.C.Y = this.A.Y + Lungime;
-            this.D.X = this.A.X;
-            this.D.Y = this.A.Y + Lungime;
+            B.X = A.X + Latime;
+            B.Y = A.Y;
+            C.X = A.X + Latime;
+            C.Y = A.Y + Lungime;
+            D.X = A.X;
+            D.Y = A.Y + Lungime;
         }
         public Rectangle(Point A, Point C)
         {
             this.A = A;
             this.C = C;
-            this.B.X = this.C.X;
-            this.B.Y = this.A.Y;
-            this.D.X = this.A.X;
-            this.D.Y = this.D.Y;
+            B.X = C.X;
+            B.Y = A.Y;
+            D.X = A.X;
+            D.Y = C.Y;
         }
         public void Print()
         {
